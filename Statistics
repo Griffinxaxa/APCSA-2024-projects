@@ -1,0 +1,46 @@
+class Main {
+    public static void main(String[] args) {
+    
+    // 1. Declare 3 int variables for grades and initialize them to 3 values
+    int scienceGrade = 12;
+    int mathGrade = 23;
+    int artGrade = 42;
+
+    // 2. Declare an int variable for the sum of the grades. Don't initialize it.
+    int sumOfGrades;
+        
+
+    // 3. Declare a double variable for the average of the grades. Don't initialize it.
+    double avgGrades;
+
+    // 4. Write a formula to calculate the sum of the 3 grades
+    sumOfGrades = artGrade + mathGrade + scienceGrade;
+
+    // 5. Write a formula to calculate the average of the 3 grades from the sum using division and type casting.
+    avgGrades = (double) sumOfGrades / 3.0;
+
+    // 6. Print out the average with a label
+    System.out.println("Here is the average of your grades: " + avgGrades);
+
+    // 7. Declare a double variable and calculate the variance.  
+        double variance = ((Math.pow(artGrade - avgGrades, 2) +
+           Math.pow(mathGrade - avgGrades, 2) +
+           Math.pow(scienceGrade - avgGrades, 2)) / 3.0);
+
+    //    Use Math.pow(base, exponent) to square the differences.
+	//    example: Math.pow(2, 3) evaluates to 8.0
+    // my code for this is above in the same line
+
+    // 8. Declare a double variable to compute the standard deviation. 
+    //    sd = √variance
+    //    Use Math.sqrt(number) for square root.
+    //    example: Math.sqrt(9) evaluates to 3.0
+        double standardDeviation = Math.sqrt(variance);
+
+
+
+    // 9. Print out the variance and standard deviation with labels.
+   System.out.println("Here is the variance: " + variance);
+   System.out.println("Here is the standard deviation : " + standardDeviation);
+  }
+}

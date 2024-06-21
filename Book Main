@@ -1,0 +1,115 @@
+grade: 96/100
+class Main
+{
+    public static void main(String[] args)
+    {
+    
+
+    //Create at least 4 different book objects. Use the default constructor only once. Use the other constructor for each additional book. 
+    //Here is a book using the default constructor
+        Book defaultBook = new Book();
+        //add ratings
+        defaultBook.addRating(2);
+        defaultBook.addRating(1);
+        defaultBook.addRating(1);
+        defaultBook.addRating(2);
+        //here we add a random rating(0-5)
+        defaultBook.addRating((int)(Math.random()*5)+1);
+        //average rating and we round it
+        double defaultAverage = (double) Math.round(defaultBook.getRating() * 100) / 100;
+
+    //Here is our first book made using the non default constructor
+        Book NoCountryForOldMen = new Book("No country for old men", "Cormac Mcarthy", 320, 4, 5);
+        //add some ratings
+        NoCountryForOldMen.addRating(4);
+        NoCountryForOldMen.addRating(5);
+        NoCountryForOldMen.addRating(4);
+        NoCountryForOldMen.addRating(3);
+        // here we add a random rating and round it to an integer
+        NoCountryForOldMen.addRating((int)(Math.random()*5)+1);
+        //average rating and we round it
+        double nfcomAverage = (double) Math.round(NoCountryForOldMen.getRating() * 100) / 100;
+
+        //the books (#1) info
+        System.out.println("Name: " + NoCountryForOldMen.getTitle() + " author: " + NoCountryForOldMen.getAuthor() +" pages: " + NoCountryForOldMen.getPages() + " average rating: " + NoCountryForOldMen.getRating());
+
+        //book no.2AS
+        Book brothersKaramazov = new Book("The Brothers Karamazov", "Dostoevsky", 1056, 4, 5);
+        //add some ratings (#2)
+        brothersKaramazov.addRating(4);
+        brothersKaramazov.addRating(5);
+        brothersKaramazov.addRating(4);
+        brothersKaramazov.addRating(3);
+        // here we add a random rating and round it to an integer (#2)
+        brothersKaramazov.addRating((int)(Math.random()*5)+1);
+        //average rating and we round it
+        double brothersKaramazovAverage = (double) Math.round(brothersKaramazov.getRating() * 100) / 100;
+
+        //the books (#2) info
+        System.out.println("Name: " + brothersKaramazov.getTitle() + " author: " + brothersKaramazov.getAuthor() +" pages: " + brothersKaramazov.getPages() + " average rating: " + brothersKaramazov.getRating());
+
+
+        //Book no.3 
+        Book dune = new Book("dune", "Frank Herbert", 896, 4, 5);
+        //add some ratings
+        dune.addRating(1);
+        dune.addRating(1);
+        dune.addRating(1);
+        dune.addRating(3);
+        // here we add a random rating and round it to an integer
+        dune.addRating((int)(Math.random()*5)+1);
+        //average rating and we round it (#3)
+        double duneAverage = (double) Math.round(dune.getRating() * 100) / 100;
+
+        //the books (#3) info
+        System.out.println("Name: " + dune.getTitle() + " author: " + dune.getAuthor() +" pages: " + dune.getPages() + " average rating: " + dune.getRating());
+
+        //getting the number of pages to calculate the sum:
+
+    int defaultPages = defaultBook.getPages();
+    int nfcomPages = NoCountryForOldMen.getPages();
+    int brothersKaramazovPages = brothersKaramazov.getPages();
+    int dunePages = dune.getPages();
+    int sumOfPages = dunePages + brothersKaramazovPages + nfcomPages + defaultPages;
+
+    //label the sum
+    System.out.println("The sum of all of the books pages is " + sumOfPages + " pages.");
+        //before getting the length of the titles we must get the titles
+
+    String defaultTitle = defaultBook.getTitle();
+    String nfcomTitle = NoCountryForOldMen.getTitle();
+    String brothersKaramazovTitle = brothersKaramazov.getTitle();
+    String duneTitle = dune.getTitle();
+        //now that we have the title stored in a variable we can use the length operator to get the len of string
+    int defaultLength = defaultTitle.length();
+    int nfcomLength = nfcomTitle.length();
+    int brothersKaramazovLength = brothersKaramazovTitle.length();
+    int duneLength = duneTitle.length();
+        //add the lengths together
+    int sumOfLength = (duneLength + brothersKaramazovLength + nfcomLength + defaultLength);
+    System.out.println("the sum of all of the length of the book titles combined is " + sumOfLength + " characters");
+
+        //get the first letter of the authors name for each book using the substring operator
+    String firstDefault = defaultBook.getAuthor().substring(0, 1);
+    String firstNfcom = NoCountryForOldMen.getAuthor().substring(0, 1);
+    String firstBrothersKaramazov = brothersKaramazov.getAuthor().substring(0, 1);
+    String firstDune = dune.getAuthor().substring(0, 1);
+    //now label and print 
+    System.out.println("the first letter of each authors name for each of the four books respectively is " + firstDefault + " " + firstNfcom + " " + firstBrothersKaramazov + " " + firstDune);
+
+    //getting the last character of the book title using the length variables we just made
+    String lastDefault = defaultTitle.substring(defaultLength-1);
+    String lastNfcom = nfcomTitle.substring(nfcomLength-1);
+    String lastBrothersKaramazov = brothersKaramazovTitle.substring(brothersKaramazovLength-1);
+    String lastDune = duneTitle.substring(duneLength-1);
+    //print it out with label
+    System.out.println("the last character of each book title is " + lastDefault + " " + lastNfcom + " " + lastBrothersKaramazov + " " + lastDune);
+
+    //lastly calculate the average rating
+    double averageAllRating = (defaultBook.getRating() + NoCountryForOldMen.getRating() + brothersKaramazov.getRating() + dune.getRating()) / 4.0;
+    //round
+    double roundedAverageAllRating = (double) Math.round(averageAllRating * 100) / 100;
+    //print out the average(Should be different each time because of the random ratings)
+    System.out.println("the average rating of all of the books is " + roundedAverageAllRating);
+}
+}

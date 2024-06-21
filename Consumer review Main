@@ -1,0 +1,19 @@
+class Main 
+{
+  public static void main(String[] args) 
+  {
+    //activity one objects
+    double test1 = Review.sentimentVal("flier");
+    double test2 = Review.sentimentVal("autism");
+    double test3 = Review.sentimentVal("beak");
+    //testing activity one methods
+    System.out.println(test1);
+    System.out.println(test2);
+    System.out.println(test3);
+    //here is activity 2
+    double test4 = Review.totalSentiment("26WestReview.txt");
+    System.out.println("the total sentiments of Review: " + test4);
+    int test5 = Review.starRating("26WestReview.txt");
+    System.out.println("the star rating of Review: " + test5);
+  }
+}

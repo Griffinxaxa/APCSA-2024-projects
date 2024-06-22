@@ -1,3 +1,4 @@
+GRADE:97/100
 public class Main 
 {
   /* Main method for testing */
